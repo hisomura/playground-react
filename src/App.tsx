@@ -1,40 +1,44 @@
 import React from "react";
 import "./App.css";
-import Box1 from "./components/Box1";
-import Box2 from "./components/Box2";
-import Box3 from "./components/Box3";
 
-const parentStyle: React.CSSProperties = {
-  position: "relative",
-  width: "1000px",
-  height: "1000px",
-  borderStyle: "solid",
-};
-
-const childStyle: React.CSSProperties = {
-  position: "absolute",
-  userSelect: "none",
-  width: "100px",
-  height: "100px",
-  borderStyle: "solid",
-};
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import DragBox from "./drag-box/DragBox";
 
 function App() {
   return (
-    <>
-      <div className="App" style={parentStyle}>
-        <Box1 top={250} left={250}>
-          top and left
-        </Box1>
-        <Box2 top={500} left={500}>
-          ref top and left 2
-        </Box2>
-        <Box3 top={750} left={750}>
-          ref translate
-        </Box3>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/box-drag">Box Drag</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/box-drag">
+            <DragBox />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    </>
+    </Router>
   );
+}
+
+function Home() {
+  return <h2>Home</h2>;
 }
 
 export default App;
