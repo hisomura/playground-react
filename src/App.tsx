@@ -3,6 +3,7 @@ import "./App.css";
 
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import DragBox from "./drag-box/DragBox";
+import RectangleSelection from "./RectangleSelection";
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/box-drag">Box Drag</Link>
+              <Link to="/drag-box">Drag Box</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/rectangle-selection">Rectangle Selection</Link>
             </li>
           </ul>
         </nav>
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route path="/box-drag">
             <DragBox />
+          </Route>
+          <Route path="/rectangle-selection">
+            <RectangleSelection />
           </Route>
           <Route path="/">
             <Home />
