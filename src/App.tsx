@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import DragBox from "./drag-box/DragBox";
 import RectangleSelection from "./RectangleSelection";
 import RenderItems from "./drag-box/RenderItems";
+import TransitionExample from "./react-transition-group/TransitionExample";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             <li>
               <Link to="/render-items">Render Items</Link>
             </li>
+            <li>
+              <Link to="/react-transition-group-transition">Transition</Link>
+            </li>
           </ul>
         </nav>
 
@@ -35,6 +39,9 @@ function App() {
           </Route>
           <Route path="/rectangle-selection">
             <RectangleSelection />
+          </Route>
+          <Route path="/react-transition-group-transition">
+            <TransitionExample />
           </Route>
           <Route path="/render-items">
             <RenderItems />
