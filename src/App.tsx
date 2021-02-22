@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 
+import { MdDone, MdPanoramaFishEye } from "react-icons/md";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import DragBox from "./drag-box/DragBox";
 import RectangleSelection from "./RectangleSelection";
@@ -56,7 +57,11 @@ function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (<div>
+    <MdPanoramaFishEye />
+    <MdDone />
+    <h2>Home</h2>;
+  </div>)
 }
 
 export default App;
