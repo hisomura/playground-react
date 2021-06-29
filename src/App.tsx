@@ -7,6 +7,7 @@ import DragBox from "./drag-box/DragBox";
 import RectangleSelection from "./RectangleSelection";
 import RenderItems from "./drag-box/RenderItems";
 import TransitionExample from "./react-transition-group/TransitionExample";
+import Swr from "./swr";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             <li>
               <Link to="/react-transition-group-transition">Transition</Link>
             </li>
+            <li>
+              <Link to="/swr">Transition</Link>
+            </li>
           </ul>
         </nav>
 
@@ -41,11 +45,14 @@ function App() {
           <Route path="/rectangle-selection">
             <RectangleSelection />
           </Route>
+          <Route path="/render-items">
+            <RenderItems />
+          </Route>
           <Route path="/react-transition-group-transition">
             <TransitionExample />
           </Route>
-          <Route path="/render-items">
-            <RenderItems />
+          <Route path="/swr">
+            <Swr/>
           </Route>
           <Route path="/">
             <Home />
