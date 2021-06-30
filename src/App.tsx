@@ -3,6 +3,7 @@ import "./App.css";
 
 import { MdDone, MdPanoramaFishEye } from "react-icons/md";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { ComponentInsideComponent } from "./ComponentInsideComponent";
 import DragBox from "./drag-box/DragBox";
 import RectangleSelection from "./RectangleSelection";
 import RenderItems from "./drag-box/RenderItems";
@@ -33,6 +34,9 @@ function App() {
             <li>
               <Link to="/swr">Transition</Link>
             </li>
+            <li>
+              <Link to="/component-inside-component">Component inside component</Link>
+            </li>
           </ul>
         </nav>
 
@@ -52,7 +56,10 @@ function App() {
             <TransitionExample />
           </Route>
           <Route path="/swr">
-            <Swr/>
+            <Swr />
+          </Route>
+          <Route path="/component-inside-component">
+            <ComponentInsideComponent />
           </Route>
           <Route path="/">
             <Home />
@@ -64,11 +71,13 @@ function App() {
 }
 
 function Home() {
-  return (<div>
-    <MdPanoramaFishEye />
-    <MdDone />
-    <h2>Home</h2>;
-  </div>)
+  return (
+    <div>
+      <MdPanoramaFishEye />
+      <MdDone />
+      <h2>Home</h2>;
+    </div>
+  );
 }
 
 export default App;
